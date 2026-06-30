@@ -1,27 +1,39 @@
-const ArrowIcon = () => (
-  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-    <line x1="7" y1="17" x2="17" y2="7" />
-    <polyline points="7 7 17 7 17 17" />
-  </svg>
-);
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="nav" id="nav">
-      <div className="logo">
-        <span className="logo-dot"></span>
-        the <span className="logo-accent">genzz</span>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="container nav-container">
+        <a href="#" className="nav-logo">
+          the genzz
+        </a>
+        
+        <ul className="nav-links">
+          <li><a href="#projects">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#stats">Stats</a></li>
+        </ul>
+
+        <a href="https://wa.me/918435610586" className="btn-primary" style={{ padding: '10px 20px', fontSize: '14px' }}>
+          Let's Talk
+        </a>
+
+        <button className="mobile-menu-btn">
+          {/* @ts-ignore */}
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
       </div>
-      <ul className="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Work</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#stats">About</a></li>
-      </ul>
-      <a href="https://wa.me/918435610586" className="nav-cta-btn" target="_blank" rel="noreferrer">
-        Start a project
-        <ArrowIcon />
-      </a>
     </nav>
   );
 };

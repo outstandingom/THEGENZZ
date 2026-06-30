@@ -1,23 +1,30 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Services from './components/Services';
 import Projects from './components/Projects';
-import Team from './components/Team';
+import Services from './components/Services';
 import WhyUs from './components/WhyUs';
+import Team from './components/Team';
 import Stats from './components/Stats';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <>
-      <div className="grain"></div>
+      <div className="ambient-bg">
+        <div className="ambient-orb orb-1"></div>
+        <div className="ambient-orb orb-2"></div>
+        <div className="ambient-orb orb-3"></div>
+      </div>
+      
       <Navbar />
-      <Hero />
-      <Services />
-      <Projects />
-      <Team />
-      <WhyUs />
-      <Stats />
+      <main>
+        <Hero />
+        <Projects />
+        <Services />
+        <WhyUs />
+        <Team />
+        <Stats />
+      </main>
       <Footer />
     </>
   );
