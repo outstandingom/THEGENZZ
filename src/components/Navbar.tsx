@@ -1,83 +1,29 @@
-import { useState, useEffect } from 'react';
-import { IoMenuOutline, IoCloseOutline } from 'react-icons/io5';
+const ArrowIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+    <line x1="7" y1="17" x2="17" y2="7" />
+    <polyline points="7 7 17 7 17 17" />
+  </svg>
+);
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const toggleMenu = () => {
-        setMobileMenuOpen(!mobileMenuOpen);
-        if (!mobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    };
-
-    const closeMenu = () => {
-        setMobileMenuOpen(false);
-        document.body.style.overflow = 'auto';
-    };
-
-    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
-        e.preventDefault();
-        closeMenu();
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            const navHeight = document.querySelector('.navbar')?.clientHeight || 0;
-            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    };
-
-    return (
-        <>
-            <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-                <div className="container nav-container">
-                    <a href="#" className="logo" onClick={(e) => handleNavClick(e, '#home')}>The <span>genzz</span></a>
-                    <nav className="nav-links">
-                        <a href="#home" onClick={(e) => handleNavClick(e, '#home')}>Home</a>
-                        <a href="#services" onClick={(e) => handleNavClick(e, '#services')}>Services</a>
-                        <a href="#projects" onClick={(e) => handleNavClick(e, '#projects')}>Projects</a>
-                        <a href="#why-us" onClick={(e) => handleNavClick(e, '#why-us')}>Why Us</a>
-                    </nav>
-                    <a href="https://wa.me/918435610586" className="btn btn-primary nav-cta">Let's Talk</a>
-                    <button className="mobile-menu-btn" aria-label="Toggle Menu" onClick={toggleMenu}>
-                        <IoMenuOutline />
-                    </button>
-                </div>
-            </header>
-
-            <div className={`mobile-nav-overlay ${mobileMenuOpen ? 'active' : ''}`}>
-                <button className="close-menu-btn" aria-label="Close Menu" onClick={toggleMenu}>
-                    <IoCloseOutline />
-                </button>
-                <nav className="mobile-links">
-                    <a href="#home" onClick={(e) => handleNavClick(e, '#home')}>Home</a>
-                    <a href="#services" onClick={(e) => handleNavClick(e, '#services')}>Services</a>
-                    <a href="#projects" onClick={(e) => handleNavClick(e, '#projects')}>Projects</a>
-                    <a href="#why-us" onClick={(e) => handleNavClick(e, '#why-us')}>Why Us</a>
-                    <a href="https://wa.me/918435610586" className="btn btn-primary">Let's Talk</a>
-                </nav>
-            </div>
-        </>
-    );
+  return (
+    <nav className="nav" id="nav">
+      <div className="logo">
+        <span className="logo-dot"></span>
+        the <span className="logo-accent">genzz</span>
+      </div>
+      <ul className="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#stats">About</a></li>
+      </ul>
+      <a href="https://wa.me/918435610586" className="nav-cta-btn" target="_blank" rel="noreferrer">
+        Start a project
+        <ArrowIcon />
+      </a>
+    </nav>
+  );
 };
 
 export default Navbar;
