@@ -1,0 +1,32 @@
+
+@media (max-width:992px){
+.nav{display:none}
+.menu-toggle{display:block;font-size:28px;color:#fff}
+.btn-primary{display:none}
+.hero-container,.about-grid,.contact-grid{grid-template-columns:1fr;text-align:center}
+.hero-left h1{font-size:42px}
+.hero-left p{margin:0 auto}
+.hero-btns,.hero-stats{justify-content:center;flex-wrap:wrap}
+.laptop{max-width:500px;margin:auto}
+.service-grid,.project-grid,.tech-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:768px){
+.section{padding:70px 0}
+.section-title h2{font-size:32px}
+.hero{padding-top:110px}
+.hero-left h1{font-size:36px}
+.hero-left h2{font-size:22px}
+.service-grid,.project-grid,.tech-grid,.about-features{grid-template-columns:1fr}
+.contact-form input,.contact-form textarea{font-size:15px}
+.footer-social{flex-wrap:wrap}
+}
+@media (max-width:480px){
+.container{width:92%}
+.logo{font-size:22px}
+.hero-left h1{font-size:30px}
+.hero-badge{font-size:13px}
+.hero-stats div{width:100%}
+.btn-outline{width:100%;text-align:center}
+.project-tech{justify-content:center}
+.scroll-top{right:12px;bottom:12px}
+}

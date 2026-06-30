@@ -1,0 +1,421 @@
+/*=========================================
+ANIMATIONS.CSS
+=========================================*/
+
+/* Floating */
+
+@keyframes float {
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* Fade Up */
+
+@keyframes fadeUp {
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Fade Left */
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* Fade Right */
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/* Zoom */
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* Pulse */
+
+@keyframes pulse{
+
+    0%{
+
+        box-shadow:0 0 0 rgba(0,229,255,.3);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 35px rgba(0,229,255,.7);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 rgba(0,229,255,.3);
+
+    }
+
+}
+
+/* Rotate */
+
+@keyframes rotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* Gradient */
+
+@keyframes gradient{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+/* Bounce */
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+/* Glow */
+
+@keyframes glow{
+
+    0%{
+
+        box-shadow:0 0 10px rgba(0,229,255,.2);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 40px rgba(0,229,255,.8);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 10px rgba(0,229,255,.2);
+
+    }
+
+}
+
+/* Hero */
+
+.hero-left{
+
+    animation:fadeLeft 1s ease forwards;
+
+}
+
+.hero-right{
+
+    animation:fadeRight 1s ease forwards;
+
+}
+
+.laptop{
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+/* Section */
+
+.section-title{
+
+    animation:fadeUp .8s ease;
+
+}
+
+/* Service */
+
+.service-card{
+
+    animation:fadeUp .8s ease;
+
+    transition:.4s;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+/* Projects */
+
+.project-card{
+
+    animation:zoomIn .8s ease;
+
+    transition:.4s;
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.project-card img{
+
+    transition:.5s;
+
+}
+
+.project-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* Buttons */
+
+.btn-primary{
+
+    animation:pulse 3s infinite;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.btn-outline:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* Tech */
+
+.tech-card{
+
+    transition:.4s;
+
+}
+
+.tech-card:hover{
+
+    transform:translateY(-10px) scale(1.05);
+
+}
+
+/* Contact */
+
+.contact-form{
+
+    animation:fadeUp 1s ease;
+
+}
+
+/* Footer */
+
+.footer-social a{
+
+    transition:.4s;
+
+}
+
+.footer-social a:hover{
+
+    transform:translateY(-6px) rotate(360deg);
+
+}
+
+/* Scroll Button */
+
+.scroll-top{
+
+    animation:bounce 2s infinite;
+
+}
+
+/* Blur */
+
+.blur1{
+
+    animation:float 8s ease-in-out infinite;
+
+}
+
+.blur2{
+
+    animation:rotate 25s linear infinite;
+
+}
+
+/* Hero Badge */
+
+.hero-badge{
+
+    animation:glow 4s infinite;
+
+}
+
+/* Navbar */
+
+.nav-links a{
+
+    transition:.35s;
+
+}
+
+.nav-links a:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* Image */
+
+.project-image{
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+}
+
+/* Hover */
+
+.service-card:hover,
+
+.project-card:hover,
+
+.tech-card:hover{
+
+    box-shadow:0 0 30px rgba(0,229,255,.2);
+
+}
+
+/* Background Animation */
+
+.hero{
+
+    background-size:400% 400%;
+
+    animation:gradient 15s ease infinite;
+
+}
